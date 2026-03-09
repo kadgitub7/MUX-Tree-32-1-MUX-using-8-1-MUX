@@ -132,25 +132,7 @@ Here:
 - $$\(L_i^{(k)}\)$$ is either **S<sub>i</sub>** or its complement **\(\overline{S_i}\)**, depending on the binary representation of \(k\).  
 - The product term $$\(\prod_{i=0}^{4} L_i^{(k)}\)$$ is **1** only when the select lines represent the binary number \(k\).  
 - Then that term **selects input I<sub>k</sub>**.
-
-In expanded form, the equation begins:
-
-\[
-\begin{aligned}
-$$Y =\; & \overline{S_4}\,\overline{S_3}\,\overline{S_2}\,\overline{S_1}\,\overline{S_0}\,I_0
-   + \overline{S_4}\,\overline{S_3}\,\overline{S_2}\,\overline{S_1}\,S_0\,I_1 \\
-   & + \overline{S_4}\,\overline{S_3}\,\overline{S_2}\,S_1\,\overline{S_0}\,I_2
-   + \cdots
-   + S_4\,S_3\,S_2\,S_1\,S_0\,I_{31}$$
-\end{aligned}
-\]
-
-Where:
-
-- **Adjacency** (e.g., S<sub>4</sub>S<sub>3</sub>) denotes **AND**.  
-- **"+"** denotes **OR**.  
-- The overline **\(\overline{S}\)** (or prime **S′**) denotes logical complement (NOT).
-
+- 
 The **MUX tree** composed of **8:1 MUXes with enable** implements exactly this function **without** manually writing all 32 product terms; the **select logic and enable decoding** substitute for the equivalent sum‑of‑products realization.
 
 ---
