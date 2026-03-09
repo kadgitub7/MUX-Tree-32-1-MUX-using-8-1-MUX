@@ -118,30 +118,30 @@ This assignment of select bits and enables yields the correct **32:1 MUX behavio
 From the full truth table, the **Boolean expression** for **Y** in terms of **S<sub>4</sub>…S<sub>0</sub>** and **I<sub>0</sub>…I<sub>31</sub>** can be written as a **sum of minterms**:
 
 \[
-Y = \sum_{k=0}^{31} m_k
+$$Y = \sum_{k=0}^{31} m_k$$
 \]
 
 where each minterm \(m_k\) is of the form:
 
 \[
-m_k = \left(\prod_{i=0}^{4} L_i^{(k)}\right) I_k
+$$m_k = \left(\prod_{i=0}^{4} L_i^{(k)}\right) I_k$$
 \]
 
 Here:
 
-- \(L_i^{(k)}\) is either **S<sub>i</sub>** or its complement **\(\overline{S_i}\)**, depending on the binary representation of \(k\).  
-- The product term \(\prod_{i=0}^{4} L_i^{(k)}\) is **1** only when the select lines represent the binary number \(k\).  
+- $$\(L_i^{(k)}\)$$ is either **S<sub>i</sub>** or its complement **\(\overline{S_i}\)**, depending on the binary representation of \(k\).  
+- The product term $$\(\prod_{i=0}^{4} L_i^{(k)}\)$$ is **1** only when the select lines represent the binary number \(k\).  
 - Then that term **selects input I<sub>k</sub>**.
 
 In expanded form, the equation begins:
 
 \[
 \begin{aligned}
-Y =\; & \overline{S_4}\,\overline{S_3}\,\overline{S_2}\,\overline{S_1}\,\overline{S_0}\,I_0
+$$Y =\; & \overline{S_4}\,\overline{S_3}\,\overline{S_2}\,\overline{S_1}\,\overline{S_0}\,I_0
    + \overline{S_4}\,\overline{S_3}\,\overline{S_2}\,\overline{S_1}\,S_0\,I_1 \\
    & + \overline{S_4}\,\overline{S_3}\,\overline{S_2}\,S_1\,\overline{S_0}\,I_2
    + \cdots
-   + S_4\,S_3\,S_2\,S_1\,S_0\,I_{31}
+   + S_4\,S_3\,S_2\,S_1\,S_0\,I_{31}$$
 \end{aligned}
 \]
 
