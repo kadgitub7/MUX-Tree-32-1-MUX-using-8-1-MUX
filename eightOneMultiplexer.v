@@ -16,5 +16,14 @@ module eightOneMultiplexer(
     output Y
     );
     
-    assign Y = E&(~S2&~S1&~S0&I0 | ~S2&~S1&S0&I1 | ~S2&S1&S0&I3 | S2&~S1&~S0&I4 | S2&~S1&S0&I5 | S2&S1&~S0&I6 | S2&S1&S0&I7);
+    assign Y = E & (
+    (~S2 & ~S1 & ~S0 & I0) |
+    (~S2 & ~S1 &  S0 & I1) |
+    (~S2 &  S1 & ~S0 & I2) |
+    (~S2 &  S1 &  S0 & I3) |
+    ( S2 & ~S1 & ~S0 & I4) |
+    ( S2 & ~S1 &  S0 & I5) |
+    ( S2 &  S1 & ~S0 & I6) |
+    ( S2 &  S1 &  S0 & I7)
+    );
 endmodule
