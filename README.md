@@ -187,10 +187,10 @@ Within each 8:1 MUX:
 
 The upper select bits **S<sub>4</sub>** and **S<sub>3</sub>** determine **which block is active**. A simple **2‑to‑4 decoder** generates the enables:
 
-- E<sub>0</sub> = \(\overline{S_4}\,\overline{S_3}\) → enables block x1 (I<sub>0</sub>…I<sub>7</sub>)  
-- E<sub>1</sub> = \(\overline{S_4}\,S_3\) → enables block x2 (I<sub>8</sub>…I<sub>15</sub>)  
-- E<sub>2</sub> = \(S_4\,\overline{S_3}\) → enables block x3 (I<sub>16</sub>…I<sub>23</sub>)  
-- E<sub>3</sub> = \(S_4\,S_3\) → enables block x4 (I<sub>24</sub>…I<sub>31</sub>)  
+- $$E<sub>0</sub> = \(\overline{S_4}\,\overline{S_3}\)$$ → enables block x1 (I<sub>0</sub>…I<sub>7</sub>)  
+- E<sub>1</sub> = $$\(\overline{S_4}\,S_3\)$$ → enables block x2 (I<sub>8</sub>…I<sub>15</sub>)  
+- E<sub>2</sub> = $$\(S_4\,\overline{S_3}\)$$ → enables block x3 (I<sub>16</sub>…I<sub>23</sub>)  
+- E<sub>3</sub> = $$\(S_4\,S_3\)$$ → enables block x4 (I<sub>24</sub>…I<sub>31</sub>)  
 
 Thus:
 
@@ -207,7 +207,7 @@ This matches the intuition given in the project description:
 The four block outputs are OR-ed to obtain the final output:
 
 \[
-Y = X_0 + X_1 + X_2 + X_3
+$$Y = X_0 + X_1 + X_2 + X_3$$
 \]
 
 Because **only one enable** is active at any time:
@@ -262,7 +262,7 @@ Schematic layout (conceptually):
 - **Top/side:** 2‑to‑4 decoder driven by S<sub>4</sub>, S<sub>3</sub> generating E<sub>0</sub>…E<sub>3</sub>.  
 - **Right side:** OR gate combining X<sub>0</sub>…X<sub>3</sub> into the single output **Y**.
 
-![32:1 Multiplexer Circuit](imageAssets/32x1MUXCircuit.png)
+![32:1 Multiplexer Circuit](imageAssets/32x1Circuit.png)
 
 ---
 
@@ -283,7 +283,7 @@ Typical simulation approach:
 
 In this project, the waveform demonstrates that as **SEL** increments from `00000` to `11111`, the output **Y** follows the intended pattern based on the input assignments in the testbench.
 
-![32:1 Multiplexer Waveform](imageAssets/32x1MUXWaveform.png)
+![32:1 Multiplexer Waveform](imageAssets/32x1Waveform.png)
 
 ---
 
