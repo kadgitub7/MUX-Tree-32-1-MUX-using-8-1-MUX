@@ -38,7 +38,6 @@ module thirtyTwoMUX(
     input S2,
     input S3,
     input S4,
-    input S5,
     output Y
     );
     
